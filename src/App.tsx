@@ -16,7 +16,7 @@ function App() {
   return (
     <main>
       <QueryClientProvider client={queryClient}>
-        <div>Hi! Byuckchon Frontend Developer</div>
+        <div>Hi! Byuckchon Frontend Developer<span aria-hidden="true"></span></div>
       </QueryClientProvider>
     </main>
   );
