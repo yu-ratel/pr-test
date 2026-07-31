@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+
+# Build
+dist/
+build/
+
+# Env files
+.env
+.env.*
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.suo
+*.sw?
+
+# Logs
+npm-debug.log*
+yarn-error.log*
+
+# Additional ignores
+node_modules
+dist
+dist-ssr
+*.local
+*.md
+!README.md
+.bc/
+.env
+.env.production
+.history
