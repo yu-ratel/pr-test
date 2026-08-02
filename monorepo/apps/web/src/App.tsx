@@ -12,7 +12,9 @@ const queryClient = new QueryClient({
   },
 });
 
-function App() {
+const _lintReviewCommentTest = 'eslint-convention-review';
+
+export default function App() {
   return (
     <main>
       <QueryClientProvider client={queryClient}>
@@ -21,5 +23,3 @@ function App() {
     </main>
   );
 }
-
-export default App;
