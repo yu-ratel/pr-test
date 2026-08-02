@@ -1,38 +1,28 @@
 # Dependencies
 node_modules/
+.pnpm-store/
 
 # Build
 dist/
 build/
+out/
+.next/
+.turbo/
+*.tsbuildinfo
 
-# Env files
+# Env
 .env
 .env.*
-.env.local
-.env.*.local
+!.env.example
 
-# OS
+# OS / Editor
 .DS_Store
 Thumbs.db
-
-# Editor
-.vscode/
 .idea/
-*.suo
-*.sw?
 
 # Logs
 npm-debug.log*
-yarn-error.log*
+pnpm-debug.log*
 
-# Additional ignores
-node_modules
-dist
-dist-ssr
-*.local
-*.md
-!README.md
+# bc
 .bc/
-.env
-.env.production
-.history

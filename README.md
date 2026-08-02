@@ -1,54 +1,39 @@
-# singletest
+# monorepo
 
-## 기술 스택
+pnpm + Turborepo 기반 프론트엔드 모노레포. (byuckchon-frontend-cli 로 생성)
 
-| 항목 | 내용 |
-|------|------|
-| Framework | React 19 |
-| Language | TypeScript |
-| Build Tool | Vite |
-| Styling | Tailwind CSS |
-| State | Zustand |
-| HTTP | Axios |
-| Lint | ESLint + Prettier |
+## 구조
+
+```
+apps/           # 배포 대상 (React / Next 앱)
+  web/
+packages/       # 내부 공유 패키지 (@monorepo/*)
+  config-eslint/
+  config-typescript/
+```
 
 ## 시작하기
 
 ```bash
-# 의존성 설치
-npm install
-
-# 개발 서버 실행
-npm run dev
-
-# 프로덕션 빌드
-npm run build
-
-# 코드 포맷팅
-npm run format
+pnpm install            # 전체 의존성 설치
+pnpm dev                # 모든 앱 dev (turbo)
+pnpm web             # web 앱만 실행
 ```
 
-## 프로젝트 구조
+## 앱 추가
 
-```
-src/
-├── assets/        정적 파일 (이미지, 폰트 등)
-├── lib/           유틸리티 함수, 상수
-├── store/         Zustand 상태 관리
-├── api/           Axios API 호출
-├── hooks/         커스텀 훅
-├── context/       React Context
-├── components/    재사용 가능한 UI 컴포넌트
-├── layout/        레이아웃 컴포넌트
-└── page/          페이지 컴포넌트
+새 React/Next 앱을 이 모노레포에 추가하려면 루트에서:
+
+```bash
+bc add
 ```
 
-## 레이어 의존성 규칙
+## 스크립트
 
-각 레이어는 아래 방향으로만 import 해야 합니다.
-
-```
-lib → store → api → hooks → context → components → layout → page
-```
-
-`assets`는 모든 레이어에서 자유롭게 참조 가능합니다.
+| 명령 | 설명 |
+|------|------|
+| `pnpm dev` | 전체 앱 개발 서버 (turbo) |
+| `pnpm build` | 전체 빌드 |
+| `pnpm lint` | 전체 lint |
+| `pnpm typecheck` | 전체 타입체크 |
+| `pnpm format` | Prettier 포맷 |
